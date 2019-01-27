@@ -8,13 +8,14 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
- * @Auther: TosinJia
- * @Date: 2019/1/27 10:32
- * @Description:
+ * @author: TosinJia
+ * @date: 2019/1/27 10:32
+ * @description:
  */
 public class ProductLog {
     private String startTime = "2019-01-01";
     private String endTime = "2019-01-31";
+    private Random random = new Random();
 
     private List<String> phoneList = new ArrayList<>();
     private Map<String, String> phoneNameMap = new HashMap<>();
@@ -89,7 +90,8 @@ public class ProductLog {
         String buildTime = randomBuildTime(startTime,endTime);
 
         DecimalFormat df = new DecimalFormat("0000");
-        String duration = df.format((int)(30*60*Math.random()));
+//        String duration = df.format((int)(30*60*Math.random()));
+        String duration = df.format(random.nextInt(30*60));
 
         StringBuilder sb = new StringBuilder();
         sb.append(caller).append(",").append(callee).append(",")
