@@ -135,9 +135,11 @@ public class ProductLog {
     }
 
     public static void main(String[] args){
-        args = new String[]{"F:\\temp\\long.csv"};
+        if(args == null || args.length<=0){
+            System.out.println("请输入日志文件全路径！");
+            return;
+        }
         ProductLog productLog = new ProductLog();
         productLog.writeLog(args[0]);
     }
-
 }
