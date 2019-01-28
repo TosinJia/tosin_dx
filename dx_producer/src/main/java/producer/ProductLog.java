@@ -11,6 +11,8 @@ import java.util.*;
  * @author: TosinJia
  * @date: 2019/1/27 10:32
  * @description:
+ *
+ * java -cp .jar ProductLog filepath
  */
 public class ProductLog {
     private String startTime = "2019-01-01";
