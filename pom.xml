@@ -11,6 +11,7 @@
     <modules>
         <module>dx_producer</module>
         <module>dx_consumer</module>
+        <module>dx_analysis</module>
     </modules>
 
     <properties>
