@@ -1,12 +1,21 @@
 package utils;
 
-import java.sql.Connection;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.hbase.client.Connection;
+import org.apache.hadoop.hbase.client.ConnectionFactory;
+
+import java.io.IOException;
 
 public class ConnectionInstance {
     private static Connection connection;
-    public static synchronized Connection getConnection(Configuration configuration){
+    public static synchronized Connection getConnection(Configuration conf){
         if(connection  == null || connection.isClosed()){
-            connection =
+            try {
+                connection = ConnectionFactory.createConnection(conf);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return connection;
     }
